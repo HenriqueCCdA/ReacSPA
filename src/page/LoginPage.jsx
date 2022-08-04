@@ -32,6 +32,7 @@ function LoginPage(){
         if (response.status === 200){
             console.log('Token recuperado');
             setToken(data.token)
+            localStorage.setItem('Token', data.token)
         } else {
             console.log('Erro nas credenciais');
             setError(data.non_field_errors);

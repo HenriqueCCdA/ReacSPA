@@ -27,13 +27,13 @@ function RegisterPage() {
     };
 
     let response = await fetch(url, config);
+    let data = await response.json();
 
     if (response.status === 201) {
       console.log('Usuario registrado com sucesso');
       setCreateUser(true);
     } else {
       console.log('Erro na criação do usuario');
-      let data = await response.json();
       setError(data.error);
     }
 
